@@ -2,10 +2,15 @@ package validation;
 
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import edu.stanford.nlp.trees.Tree;
 import patternfeatureextractor.PatternFeatureExtractorConfiguration;
 import patternfeatureextractor.Triple;
+import utilities.Utilitie;
+
+import java.util.HashMap;
 import _stanfordParser.*;
 
 public class ParseTreeValidation {
@@ -73,5 +78,17 @@ public class ParseTreeValidation {
 			pw.write(tree.toString()+"\n");
 		}
 		pw.close();
+	}
+
+	public static void dumpVisualParseTree(PrintWriter pw,int OneWordSize) {
+		// TODO Auto-generated method stub
+		for (Entry<Integer, Sentence> entry : document.speakers.entrySet())
+		{
+		    Sentence s = entry.getValue();
+			Tree t = s.parseTree;
+			pw.write("sentenceID: "+Integer.toString(s.id)+"\n");
+			Utilitie.getVisualTreeString(pw,t,OneWordSize);
+			pw.write("\n");
+		}
 	}
 }

@@ -222,20 +222,23 @@ public class Parser {
 		System.out.println("Writing Parse Starts .......");
 		PrintWriter pw = new PrintWriter(new FileOutputStream(PatternFeatureExtractorConfiguration.ParseTreeOutputFile));
 		ParseTreeValidation.dumpParseTree(pw);
+		//VisualParseTreeOutputFile
+		pw = new PrintWriter(new FileOutputStream(PatternFeatureExtractorConfiguration.VisualParseTreeOutputFile));
+		ParseTreeValidation.dumpVisualParseTree(pw,1);
 		System.out.println("Writing Parse Ends .......");
 	}
 		
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
-		readPatternFile();
-		readAlignmentFile();
+		//readPatternFile();
+		//readAlignmentFile();
 		readCorpusFile();
-		praseTreeValidation();
-		alignmentValidation();
-		assignTagSequence();
-		Utilitie.generateConfusionMatrix(patterns);
+		//praseTreeValidation();
+		//alignmentValidation();
+		//assignTagSequence();
+		//Utilitie.generateConfusionMatrix(patterns);
 		writeParseTree();
-		writeIntoFile();
+		//writeIntoFile();
 	}
 
 }

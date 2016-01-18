@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import _stanfordParser.Sentence;
+
+
 public class Document implements Serializable
 {
 	private static final long serialVersionUID = -8362626053122851900L;
